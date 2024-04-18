@@ -24,6 +24,7 @@ class AmazonPage{
         // await browser.scroll(0, 500)
         await browser.pause(3000)
         await this.checkboxbtn.click()
+        await browser.pause(3000)
        
         
     }

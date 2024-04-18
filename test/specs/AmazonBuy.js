@@ -1,5 +1,6 @@
 import AmazonPage from "../pageobjects/AmazonPage.js";
 import ExcelUtility from "../../Utilities/ExcelUtility.js";
+import excel from "exceljs"
 describe('amazon test', ()=>{
     it('amazon buy demo',async()=>{
 
@@ -9,14 +10,12 @@ describe('amazon test', ()=>{
         await AmazonPage.AmazonPage('iphone')
         await browser.pause(2000)
         
-      //  await browser.pause(3000)
-      let   book1=new excel.Workbook()
-      await  book1.xlsx.readFile(Filepath)
-     let  sheet1 =book1.addWorksheet(SheetName)
+    
+            
 
        await AmazonPage.mobilenames.map(async(ele)=>{
            let names = await ele.getText();
-            await ExcelUtility.writedataToExcel('./test/TESTDATA/Data.xlsx','Sheet10',1,1,names)
+            await ExcelUtility.writedataToExcel('./test/TESTDATA/Data.xlsx','Sheet15',1,1,names)
             //Apple iPhone 14 Plus (128 GB) - Purple
             //Apple iPhone 14 Plus (128 GB) - Purple
         })
