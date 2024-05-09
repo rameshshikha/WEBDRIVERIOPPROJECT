@@ -4,7 +4,7 @@ import excel from "exceljs"
 describe('amazon test', ()=>{
     it('amazon buy demo',async()=>{
 
-        await browser.url('https://www.amazon.in/s?k=iphone&crid=1DZCY9RB1P0DM&sprefix=iphone%2Caps%2C246&ref=nb_sb_noss_1')
+        await browser.url('https://www.amazon.in/')
         await browser.pause(2000)
         await browser.maximizeWindow()
         await AmazonPage.AmazonPage('iphone')
@@ -15,18 +15,38 @@ describe('amazon test', ()=>{
       await browser.pause(2000)
       await  book1.xlsx.readFile(Filepath)
       await browser.pause(2000)
-     let  sheet1 = book1.addWorksheet('Sheet3')
+     let  sheet1 = book1.addWorksheet('Sheet1')
      await browser.pause(2000)
 
-     await AmazonPage.mobilenames.map(async(ele)=>{
-        let names = await ele.getText()});
-        console.log(names.getText());
-          for(let i=1; i<=sheet1.rowCount; i++){
-               sheet1.addRow(i).getCell(1).value=names
+     let nameslength= await AmazonPage.mobilenames.length;
+   //   let pricelength= await AmazonPage.pricedetails.length;
+   //   console.log(pricelength);
+    
+   //   await AmazonPage.mobilenames.map(async(ele)=>{
+   //      let names = await ele.getText();
+        
+   //   })
+   //      await AmazonPage.pricedetails.map(async(element)=>{
+   //       let price =  await element.getText();
+        
+   //      })
+     for(let i=1; i<=nameslength; i++){
+      
+        await AmazonPage.mobilenames.map(async(ele)=>{
+            let names = await ele.getText();
+            
+        
+            await AmazonPage.pricedetails.map(async(element)=>{
+             let price =  await element.getText();
+            
+           
+      sheet1.getRow(i).getCell(1).value=`${names} ===> ${price}`
                await book1.xlsx.writeFile(Filepath)
-          }
+          
+        })
+    })
+     }
      })
      
+    
     })
-
-//

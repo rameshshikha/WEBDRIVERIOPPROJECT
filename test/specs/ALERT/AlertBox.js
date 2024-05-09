@@ -34,7 +34,7 @@ describe('alert test',()=>{
            console.log(alert);
            let  text=await browser.getAlertText()
            console.log(text);
-
+           expect(browser).isAlertOpen()
            await  browser.pause(3000)
            browser.sendAlertText('no')
            

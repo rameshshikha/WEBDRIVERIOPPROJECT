@@ -7,7 +7,7 @@ describe('suit name',()=>{
      let ele=await  browser.$('#APjFqb').setValue('javascript')
     await  expect(browser).toHaveTitle('Google')
      await   browser.pause(3000)
-     
+     await browser.execute(()=>{window:scrollY})
    // await  browser.pause(2000)
    
     })

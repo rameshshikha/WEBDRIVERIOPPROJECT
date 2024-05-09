@@ -22,8 +22,17 @@ class AmazonPage{
       
         // await browser.execute(() =>{ window.scrollY})
         // await browser.scroll(0, 500)
-        await browser.pause(3000)
-        await this.checkboxbtn.click()
+        await browser.pause(3000)   
+        for(;;) { 
+        try {
+            await browser.pause(3000)
+            await this.checkboxbtn.click()
+            break;
+
+        } catch (error) {
+            await browser.refresh()
+        }}
+       
         await browser.pause(3000)
        
         

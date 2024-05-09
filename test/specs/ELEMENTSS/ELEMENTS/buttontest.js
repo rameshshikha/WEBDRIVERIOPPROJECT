@@ -1,3 +1,6 @@
+
+import { expect } from "chai"
+
 describe('suit file', () => {
     it('button test', async () => {
         await browser.url("https://demoapps.qspiders.com/ui/button?sublist=0")
@@ -12,6 +15,8 @@ describe('suit file', () => {
                  // await expect(ele).toHaveText('You selected "Yes"')
                  // console.log('pass');
                   await ele.toHaveText(expect.stringContaining('You'));
+                 //chai assertion
+                  expect(ele).to.have.a.string('yes')
                   console.log('pass');
 
                 //     await  browser.$('#btn4').doubleClick() 

@@ -1,6 +1,7 @@
 import { expect } from "chai"
 import allure from "allure-commandline"
 
+
 export const config = {
     //
     // ====================
@@ -62,8 +63,8 @@ export const config = {
             //0 -Default ,1- Allow , 2-Block
             'profile.managed_default_content_settings.notifications':2
         },
-        //to run headless
-      //  args :['--headless','--disable-gpu']
+       // to run headless
+       args :['--headless','--disable-gpu']
 
         }
     }],
@@ -203,8 +204,13 @@ export const config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {object}         browser      instance of created browser/device session
      */
-     before: function (capabilities, specs) {
-        global.expect = expect
+     before: async function (capabilities, specs) {
+      // wdio.conf.js
+
+    await import('expect-webdriverio');
+    global.wdioExpect = global.expect;
+    const chai = await import('chai');
+    global.expect = chai.expect;  
      },
     /**
      * Runs before a WebdriverIO command gets executed.

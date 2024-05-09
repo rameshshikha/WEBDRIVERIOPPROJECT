@@ -12,6 +12,7 @@ describe('suit test' , ()=>{
              await browser.execute(()=>{window.scrollX})
              await browser.scroll(300,0)
              await browser.pause(3000)
+    
              
 
                 

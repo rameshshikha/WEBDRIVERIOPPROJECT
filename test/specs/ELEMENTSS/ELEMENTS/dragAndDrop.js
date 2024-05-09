@@ -17,3 +17,6 @@ describe('demo test',function(){
         
     })
 })
+// let drag=await browser.$()
+// let drop = await browser.$()
+// await drag.dragAndDrop(drop)

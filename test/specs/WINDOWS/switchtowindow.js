@@ -1,3 +1,5 @@
+import { expect } from "chai";
+
 describe('window test',()=>{
 
     it('switchtowindow test',async()=>{
@@ -12,7 +14,9 @@ describe('window test',()=>{
 
                await   browser.switchToWindow(windows[1])
                  await browser.switchWindow('Facebook – log in or sign up')
+                 expect(window).toHaveUrl('https://www.facebook.com/')
                 await expect(browser).toHaveUrl('https://www.amazon.in/')
+              
                 await expect(browser).toHaveUrl('https://www.facebook.com/')
               //  const  window=await browser.getWindowHandle()
                // console.log(window);

@@ -15,12 +15,12 @@ describe('window test' , ()=>{
 await rowser.pause(3000)
    await browser.navigateTo('https://webdriver.io')
     
-   await rowser.pause(3000)
+   await browser.pause(3000)
      console.log(await browser.getUrl()); 
 
-     await rowser.pause(3000)
+     await browser.pause(3000)
             await browser.$("//a[.='API']").click();
-            await rowser.pause(3000)
+            await browser.pause(3000)
                         await expect(browser).toHaveUrl("https://webdriver.io/docs/api")
                         await rowser.pause(3000)
                           await browser.back();
@@ -32,7 +32,7 @@ await rowser.pause(3000)
             await browser.$("//a[.='Protocols']").click();
           await browser.refresh();
 
-
+browser.getWindowHandles()
 
 
 

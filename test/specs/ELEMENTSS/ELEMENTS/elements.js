@@ -19,6 +19,11 @@ describe('elements test',()=>{
                      console.log('x','y');
 
 
+                    //  let x=ele.getLocation('x')
+                    //  let y=ele.getLocation('y')
+                    //  console.log(x,y);
+
+
 
 
 
